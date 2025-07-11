@@ -33,11 +33,17 @@ li a:hover {
 }
 
 /*Container styling*/
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 3px solid black;
+}
+
 .head-container {
   display: grid;
   grid-template-columns: 1fr;
   background-color: #3737b3;
-  min-height: 100vh;
+  min-height: 94.5vh;
 }
 
 .container {
@@ -49,9 +55,9 @@ li a:hover {
 
 .bottom-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   background-color: #3737b3;
-  min-height: 70vh;
+  min-height: 40vh;
 }
 
 /*Div style in container*/
