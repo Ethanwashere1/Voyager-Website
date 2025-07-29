@@ -2,6 +2,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
 h2 {
@@ -25,6 +26,7 @@ li a {
   display: block;
   color: white;
   text-align: center;
+  font-size: 1.1rem;
   padding: 20px 60px;
   text-decoration: none;
   white-space: nowrap;
@@ -37,6 +39,7 @@ li a:hover {
 .left-image {
   margin-right: auto;
   padding-left: 20px;
+  max-width: 150px;
 }
 
 .left-image img{
@@ -113,4 +116,66 @@ li a:hover {
   text-align: center;
   padding: 50px;
   font-size: 3vh;
+}
+
+/* --- Media Queries for Responsive Scaling & Layout Change --- */
+
+/* For screens up to 1200px (e.g., smaller desktops, large tablets) */
+@media screen and (max-width: 1200px) {
+  li a {
+    font-size: 1rem; /* Slightly smaller font */
+    padding: 18px 45px; /* Reduced padding */
+  }
+
+  .left-image img {
+    max-width: 130px; /* Smaller logo */
+  }
+
+  .menu-spacer {
+    min-width: 130px; /* Adjust spacer to match smaller logo */
+  }
+}
+
+/* For screens up to 992px (e.g., medium tablets, larger phones in landscape) */
+@media screen and (max-width: 992px) {
+  li a {
+    font-size: 0.95rem; /* Even smaller font */
+    padding: 15px 30px; /* Further reduced padding */
+  }
+
+  .left-image img {
+    max-width: 110px; /* Smaller logo */
+  }
+
+  .menu-spacer {
+    min-width: 110px; /* Adjust spacer */
+  }
+
+  .menu {
+    padding: 0 15px; /* Less overall menu padding */
+  }
+}
+
+/* For screens up to 768px (e.g., tablets in portrait, typical large phones) */
+@media screen and (max-width: 768px) {
+  /* This is often where horizontal menus start breaking. */
+  /* Instead of stacking, let's prepare for a mobile-specific layout. */
+
+  .menu {
+    /* Change grid to just logo and a space for a hamburger icon */
+    grid-template-columns: auto 1fr;
+    padding: 0 10px; /* Minimal padding */
+  }
+
+  .left-image img {
+    max-width: 80px; /* Smaller logo for mobile */
+  }
+
+  .menu > div:nth-child(2) { /* Hide the main navigation menu */
+    display: none;
+  }
+
+  .menu-spacer { /* Hide the spacer div */
+    display: none;
+  }
 }
