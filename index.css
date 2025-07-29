@@ -17,22 +17,48 @@ ul {
 }
 
 li {
-    float: left;
+  float: none;
+  display: inline-block;
 }
 
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 60px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 li a:hover {
-    background-color: #111;
+  background-color: #111;
+}
+
+.left-image {
+  margin-right: auto;
+  padding-left: 20px;
+}
+
+.left-image img{
+  display: block;
+  height: auto;
+  max-width: 150px;
 }
 
 /*Container styling*/
+.menu {
+  width: 100%;
+  position: fixed;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  border: 3px solid black;
+  box-sizing: border-box;
+  z-index: 1000;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
 .head-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -49,12 +75,21 @@ li a:hover {
 
 .bottom-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   background-color: #3737b3;
-  min-height: 70vh;
+  min-height: 40vh;
 }
 
 /*Div style in container*/
+.menu > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-spacer {
+  margin-left: auto;
+  min-width: 150px;
+}
 .head-container > div {
   border: 3px solid black;
   color: white;
