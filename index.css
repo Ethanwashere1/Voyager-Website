@@ -121,10 +121,10 @@ li a:hover {
 /* --- Media Queries for Responsive Scaling & Layout Change --- */
 
 /* For screens up to 1200px (e.g., smaller desktops, large tablets) */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
   li a {
     font-size: 1rem; /* Slightly smaller font */
-    padding: 18px 45px; /* Reduced padding */
+    padding: 16px 32px; /* Reduced padding */
   }
 
   .left-image img {
@@ -137,10 +137,10 @@ li a:hover {
 }
 
 /* For screens up to 992px (e.g., medium tablets, larger phones in landscape) */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1000px) {
   li a {
     font-size: 0.95rem; /* Even smaller font */
-    padding: 15px 30px; /* Further reduced padding */
+    padding: 12px 24px; /* Further reduced padding */
   }
 
   .left-image img {
@@ -157,7 +157,7 @@ li a:hover {
 }
 
 /* For screens up to 768px (e.g., tablets in portrait, typical large phones) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 780px) {
   /* This is often where horizontal menus start breaking. */
   /* Instead of stacking, let's prepare for a mobile-specific layout. */
 
