@@ -103,6 +103,10 @@ nav a:hover {
   list-style-position: inside;
 }
 
+#android {
+  display: none;
+  list-style-position: inside;
+}
 /*Div style in container*/
 .menu > div:nth-child(2) {
   display: flex;

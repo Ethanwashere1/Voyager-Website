@@ -26,19 +26,19 @@
         </div>
         <div class="content">
             <div>
-                <h1>Download instructions</h1>
+                <h1>PWA Download Instructions</h1>
                 <div class="buttons-container">
                     <div class="download">
                         <img src="windows.png" alt="Windows logo">
                         <button class="btn" onclick="showInstructions('windows')">Windows</button>
                     </div>
                     <div class="download">
-                        <img src="apple.svg" alt="Mobile logo">
+                        <img src="apple.svg" alt="Apple logo">
                         <button class="btn" onclick="showInstructions('mobile')">iOS</button>
                     </div>
                     <div class="download">
                         <img src="android.svg" alt="Android logo">
-                        <button class="btn" onclick="showInstructions('android')">iOS</button>
+                        <button class="btn" onclick="showInstructions('android')">Android</button>
                     </div>
                 </div>
             </div>
@@ -48,19 +48,24 @@
                     <li>Windows instructions here</li>
                 </ol>
             </div>
-
             <div id="mobile">
                 <h3>Mobile Instructions</h3>
                 <ol>
                     <li>Mobile instructions here</li>
                 </ol>
             </div>
+            <div id="android">
+                <h3>Android Instructions</h3>
+                <ol>
+                    <li>Android instructions here</li>
+                </ol>
         </div>
         <script>
             function showInstructions(platform) {
             // Hide both
             document.getElementById("windows").style.display = "none";
             document.getElementById("mobile").style.display = "none";
+            document.getElementById("android").style.display = "none";
 
             // Show the selected one
             document.getElementById(platform).style.display = "block";
