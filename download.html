@@ -24,14 +24,47 @@
                 
             </div>
         </div>
-        <div class="head-container">
+        <div class="content">
             <div>
-                <h1>Download VOYAGER</h1>
-                <a href="voyagerapp.zip" download>
-                    <button class="btn">Download</button>
-                </a>
+                <h1>Download instructions</h1>
+                <div class="buttons-container">
+                    <div class="download">
+                        <img src="windows.png" alt="Windows logo">
+                        <button class="btn" onclick="showInstructions('windows')">Windows</button>
+                    </div>
+                    <div class="download">
+                        <img src="apple.svg" alt="Mobile logo">
+                        <button class="btn" onclick="showInstructions('mobile')">iOS</button>
+                    </div>
+                    <div class="download">
+                        <img src="android.svg" alt="Android logo">
+                        <button class="btn" onclick="showInstructions('android')">iOS</button>
+                    </div>
+                </div>
+            </div>
+            <div id="windows">
+                <h3>Windows Instructions</h3>
+                <ol>
+                    <li>Windows instructions here</li>
+                </ol>
+            </div>
+
+            <div id="mobile">
+                <h3>Mobile Instructions</h3>
+                <ol>
+                    <li>Mobile instructions here</li>
+                </ol>
             </div>
         </div>
-        </div>
+        <script>
+            function showInstructions(platform) {
+            // Hide both
+            document.getElementById("windows").style.display = "none";
+            document.getElementById("mobile").style.display = "none";
+
+            // Show the selected one
+            document.getElementById(platform).style.display = "block";
+            }
+        </script>
     </body>
 </html>
