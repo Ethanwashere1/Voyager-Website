@@ -1,49 +1,310 @@
-<html>
-    <!--Title of website-->
-    <head>
-        <title>Voyager</title>
-        <link rel="stylesheet" href="index.css">
-    </head>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyager - Welcome</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loader">
+        <div class="rocket-container">
+            <div class="rocket">
+                <div class="rocket-body">
+                    <div class="rocket-fin rocket-fin-left"></div>
+                    <div class="rocket-fin rocket-fin-right"></div>
+                    <div class="rocket-window"></div>
+                </div>
+                <div class="rocket-exhaust-flame"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div class="aurora-background"></div>
+    <div class="parallax-layer stars-bg"></div>
+    <div class="parallax-layer twinkle-bg"></div>
+    <div class="galaxy-background"></div>
+    <div class="meteor-shower"></div>
+    <div class="black-hole-effect"></div>
+    <div class="parallax-layer distant-nebula"></div>
+    <div class="pulsing-nebula"></div>
+    <div class="background-dots"></div>
+    <div class="background-overlay-effect"></div>
+    
+    
+    <!-- Enhanced floating elements -->
+    <div class="floating-elements">
+        <div class="floating-orb"></div>
+        <div class="floating-orb"></div>
+        <div class="floating-orb"></div>
+        <div class="floating-constellation"></div>
+        <div class="floating-constellation"></div>
+        <div class="color-shifting-orb"></div>
+        <div class="color-shifting-orb"></div>
+        <div class="color-shifting-orb"></div>
+    </div>
+    
+    <!-- Shooting stars -->
+    <div class="shooting-stars">
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+    </div>
 
-    <body>
-        <div class="menu">
-            <div class = "left-image">
-                <a href="index.html"><img src="logo.png" alt="Voyager logo"></a>
-            </div>
-            <div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="menu-spacer">
-                
+    <div class="menu">
+        <div class="left-image" data-magnetic>
+            <a href="index.html" class="home-link">
+                <img src="logo.png" alt="Voyager logo">
+                <span class="logo-text">Voyager</span>
+                <div class="logo-glow"></div>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link" data-magnetic>
+                    <span class="nav-text">Home</span>
+                    <div class="nav-particles"></div>
+                </a></li>
+                <li><a href="news.html" class="nav-link" data-magnetic>
+                    <span class="nav-text">News</span>
+                    <div class="nav-particles"></div>
+                </a></li>
+                <li><a href="contact.html" class="nav-link" data-magnetic>
+                    <span class="nav-text">Contact</span>
+                    <div class="nav-particles"></div>
+                </a></li>
+                <li><a href="about.html" class="active nav-link" data-magnetic>
+                    <span class="nav-text">About</span>
+                    <div class="nav-particles"></div>
+                </a></li>
+            </ul>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Open Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="menu-glow"></div>
+        </button>
+    </div>
+
+    <header class="home-header">
+        <div id="particles-js"></div>
+        <div class="header-content">
+            <h1 class="main-title glitch-text" data-text="Embark on a Journey">
+                <div class="title-glow"></div>
+                <div class="star-field-effect"></div>
+            </h1>
+            <p class="subtitle floating-text" data-reveal-text>
+            </p>
+            <div class="header-cta">
+                <button class="explore-btn pulse-border" data-magnetic id="begin-exploration-btn" style="opacity: 0;">
+                    <div class="btn-particles"></div>
+                </button>
             </div>
         </div>
-        <div class = "head-container">
-            <div>
-                Hello
+        <div class="scroll-down-indicator">
+            <span></span>
+            <div class="scroll-waves">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
             </div>
         </div>
-        <div class = "container">
-            <div>
-                Hello
+    </header>
+
+    <main class="container">
+        <section class="stats-section">
+            <div class="section-bg-effect">
+                <div class="energy-field"></div>
             </div>
-            <div>
-                Que
+            <div class="stat-item hover-lift" data-tilt>
+                <div class="stat-glow"></div>
+                <h3 class="stat-number pulsing-number" data-target="150">0</h3>
+                <p class="stat-label"><span>Unique Courses</span></p>
+                <div class="stat-particles"></div>
             </div>
+            <div class="stat-item hover-lift" data-tilt>
+                <div class="stat-glow"></div>
+                <h3 class="stat-number pulsing-number" data-target="75">0</h3>
+                <p class="stat-label"><span>Galaxies Charted</span></p>
+                <div class="stat-particles"></div>
+            </div>
+            <div class="stat-item hover-lift" data-tilt>
+                <div class="stat-glow"></div>
+                <h3 class="stat-number pulsing-number" data-target="3000">0</h3>
+                <p class="stat-label"><span>Discoveries Made</span></p>
+                <div class="stat-particles"></div>
+            </div>
+        </section>
+
+        <section class="horizontal-scroll-section">
+            <div class="pin-container">
+                <div class="scroll-track">
+                    <div class="h-scroll-panel morphing-panel">
+                        <div class="panel-content">
+                            <h2 class="panel-title breathing-text" data-reveal-text>Explore our App</h2>
+                            <p class="panel-description floating-text" data-reveal-text>We have an app!.</p>
+                            <div class="panel-glow"></div>
+                        </div>
+                        <div class="panel-image-container rotating-border">
+                            <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=1740&auto=format&fit=crop" alt="A colorful nebula in deep space.">
+                            <div class="image-overlay"></div>
+                            <div class="image-particles"></div>
+                        </div>
+                    </div>
+                    <div class="h-scroll-panel morphing-panel">
+                        <div class="panel-content">
+                            <h2 class="panel-title breathing-text" data-reveal-text>Chart the Unknown</h2>
+                            <p class="panel-description floating-text" data-reveal-text>We're mapping the universe one galaxy at a time, uncovering structures and phenomena that challenge our understanding of cosmology.</p>
+                            <div class="panel-glow"></div>
+                        </div>
+                        <div class="panel-image-container rotating-border">
+                            <img src="https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=1793&auto=format&fit=crop" alt="A starry night sky with a meteor shower.">
+                            <div class="image-overlay"></div>
+                            <div class="image-particles"></div>
+                        </div>
+                    </div>
+                    <div class="h-scroll-panel morphing-panel">
+                        <div class="panel-content">
+                            <h2 class="panel-title breathing-text" data-reveal-text>Journey to Gas Giants</h2>
+                            <p class="panel-description floating-text" data-reveal-text>From Jupiter's Great Red Spot to Saturn's magnificent rings, explore the titans of our solar system in stunning high-resolution.</p>
+                            <div class="panel-glow"></div>
+                        </div>
+                        <div class="panel-image-container rotating-border">
+                            <img src="https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRS5G-fpV8aDvEWIAPzCqEL1jEWMJl5d2YxkLcVUhNlbFJSasq1s4dNjaJpj4Tgldcl&auto=format&fit=crop" alt="A digital rendering of a gas giant planet like Jupiter.">
+                            <div class="image-overlay"></div>
+                            <div class="image-particles"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mission-path-section">
+            <h2 class="section-title glowing-title" data-animate-scroll>
+                <span class="title-bg">Charting the Course</span>
+                <div class="title-particles"></div>
+            </h2>
+            <div class="path-container">
+                <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:var(--accent-color);stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:var(--secondary-accent);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:var(--accent-color);stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge> 
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <path id="mission-path-svg" class="path-pulse" d="M50,200 Q250,50 400,200 T750,200" 
+                          fill="none" stroke="url(#pathGradient)" stroke-width="3" filter="url(#glow)" />
+                </svg>
+                <div id="ship" class="ship-icon pulsing-ship">
+                    <div class="ship-glow"></div>
+                </div>
+                <div class="path-stars">
+                    <div class="path-star"></div>
+                    <div class="path-star"></div>
+                    <div class="path-star"></div>
+                    <div class="path-star"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="showcase-grid-section">
+            <h2 class="section-title glowing-title" data-animate-scroll>
+                <span class="title-bg">Engage With Our Work</span>
+                <div class="title-particles"></div>
+            </h2>
+            <div class="showcase-grid">
+                <a href="news.html" class="showcase-card enhanced-card pulse-border hover-lift" data-tilt data-animate-scroll>
+                    <div class="card-glow"></div>
+                    <div class="card-shine-effect"></div>
+                    <div class="card-energy-field"></div>
+                    <div class="card-scanline"></div>
+                    <div class="card-content">
+                        <div class="card-icon rotating-icon">📰</div>
+                        <h3 class="card-title glowing-text">Latest News</h3>
+                        <p class="card-description">Get real-time updates from the frontiers of our team.</p>
+                        <div class="card-hover-effect">
+                            <span>Explore →</span>
+                        </div>
+                    </div>
+                    <div class="card-particles"></div>
+                </a>
+                <a href="about.html" class="showcase-card enhanced-card pulse-border hover-lift" data-tilt data-animate-scroll>
+                    <div class="card-glow"></div>
+                    <div class="card-shine-effect"></div>
+                    <div class="card-energy-field"></div>
+                    <div class="card-scanline"></div>
+                    <div class="card-content">
+                        <div class="card-icon rotating-icon">🚀</div>
+                        <h3 class="card-title glowing-text">Our Mission</h3>
+                        <p class="card-description">Learn more about the team and vision behind Voyager.</p>
+                        <div class="card-hover-effect">
+                            <span>Discover →</span>
+                        </div>
+                    </div>
+                    <div class="card-particles"></div>
+                </a>
+                <a href="contact.html" class="showcase-card enhanced-card pulse-border hover-lift" data-tilt data-animate-scroll>
+                    <div class="card-glow"></div>
+                    <div class="card-shine-effect"></div>
+                    <div class="card-energy-field"></div>
+                    <div class="card-scanline"></div>
+                    <div class="card-content">
+                        <div class="card-icon rotating-icon">🛰️</div>
+                        <h3 class="card-title glowing-text">Join Us</h3>
+                        <p class="card-description">Connect with us to become part of the journey.</p>
+                        <div class="card-hover-effect">
+                            <span>Connect →</span>
+                        </div>
+                    </div>
+                    <div class="card-particles"></div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bottom-container enhanced-footer">
+        <div id="footer-particles"></div>
+        <div class="footer-energy-waves">
+            <div class="energy-wave"></div>
+            <div class="energy-wave"></div>
+            <div class="energy-wave"></div>
         </div>
-        <div class = "bottom-container">
-            <div>
-                Hello
-            </div>
-            <div>
-                Hello
-            </div>
+        <p class="footer-text floating-text" data-animate-scroll>Ready to join the exploration? Get in touch with our team!</p>
+        <a href="contact.html" class="cta-button enhanced-cta pulse-border" data-magnetic>
+            <span class="btn-text">Contact Us</span>
+            <div class="btn-glow"></div>
+            <div class="btn-particles"></div>
+        </a>
+        <div class="footer-constellation">
+            <div class="constellation-dot"></div>
+            <div class="constellation-dot"></div>
+            <div class="constellation-dot"></div>
+            <div class="constellation-dot"></div>
+            <div class="constellation-line"></div>
+            <div class="constellation-line"></div>
         </div>
-    </body>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="index.js"></script>
+</body>
 </html>
