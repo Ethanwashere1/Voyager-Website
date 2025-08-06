@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyager - Welcome</title>
+    <title>Voyager - Embark on a Journey</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="CustomCursor.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
     <div class="loader">
         <div class="rocket-container">
             <div class="rocket">
@@ -22,9 +26,6 @@
             </div>
         </div>
     </div>
-    <div class="cursor-dot"></div>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
     <div class="aurora-background"></div>
     <div class="parallax-layer stars-bg"></div>
     <div class="parallax-layer twinkle-bg"></div>
@@ -66,7 +67,7 @@
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="index.html" class="nav-link" data-magnetic>
+                <li><a href="index.html" class="nav-link active" data-magnetic>
                     <span class="nav-text">Home</span>
                     <div class="nav-particles"></div>
                 </a></li>
@@ -78,7 +79,7 @@
                     <span class="nav-text">Contact</span>
                     <div class="nav-particles"></div>
                 </a></li>
-                <li><a href="about.html" class="active nav-link" data-magnetic>
+                <li><a href="about.html" class="nav-link" data-magnetic>
                     <span class="nav-text">About</span>
                     <div class="nav-particles"></div>
                 </a></li>
@@ -305,6 +306,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    
     <script src="index.js"></script>
+    <script src="CustomCursor.js"></script>
 </body>
 </html>

@@ -8,10 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- INITIALIZATION ---
     initPageLoad();
-    initCursor();
-    initMagneticElements();
-    initMobileMenu();
-    
     initScrollBasedAnimations();
     initResponsiveAnimations();
     init3DTiltCards();
@@ -28,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initStarFieldEffect();
     initInteractiveBackgroundElements();
     initMeteorShower();
+    initCursor();
 
     // --- FUNCTIONS ---
 
@@ -49,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Ensure background elements are visible immediately
-        gsap.set('.aurora-background, .parallax-layer, .cosmic-web-effect, .background-dots, .background-overlay-effect, .cosmic-dust, .floating-elements, .shooting-stars', { opacity: 1 });
+        gsap.set('.aurora-background, .parallax-layer, .cosmic-web-effect, .background-dots, .background-overlay-effect, .floating-elements, .shooting-stars', { opacity: 1 });
 
         // Ensure menu is initially off-screen
         gsap.set(".menu", { yPercent: -100, opacity: 0 });
@@ -116,86 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function initMobileMenu() {
-        const toggle = document.querySelector('.mobile-menu-toggle');
-        const nav = document.querySelector('.main-nav');
-        
-        if (!toggle || !nav) return;
-        
-        // Close menu when clicking on navigation links
-        const navLinks = nav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                document.body.classList.remove('menu-open');
-                toggle.setAttribute('aria-expanded', 'false');
-                // Smooth scroll to section when clicking a nav link
-                const targetId = link.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    gsap.to(window, { duration: 1, scrollTo: { y: targetElement, offsetY: 70 }, ease: "power2.inOut" });
-                }
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const isMenuOpen = document.body.classList.contains('menu-open');
-            const clickedInsideMenu = nav.contains(e.target) || toggle.contains(e.target);
-            
-            if (isMenuOpen && !clickedInsideMenu) {
-                document.body.classList.remove('menu-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-        // Prevent menu from closing when clicking inside nav
-        nav.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-        
-        toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isMenuOpen = document.body.classList.toggle('menu-open');
-            toggle.setAttribute('aria-expanded', isMenuOpen);
-        });
-        
-        // Handle escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
-                document.body.classList.remove('menu-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-        // Handle resize events to close mobile menu on desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 900 && document.body.classList.contains('menu-open')) {
-                document.body.classList.remove('menu-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-    }
-
-    function initMagneticElements() {
-        if (window.matchMedia("(pointer: coarse)").matches) return;
-        
-        document.querySelectorAll('[data-magnetic]').forEach(el => {
-            el.addEventListener('mousemove', e => {
-                const { left, top, width, height } = el.getBoundingClientRect();
-                const x = e.clientX - left - width / 2;
-                const y = e.clientY - top - height / 2;
-                gsap.to(el, { x: x * 0.4, y: y * 0.6, duration: 0.8, ease: 'power3.out' });
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                gsap.to(el, { x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.5)' });
-            });
-            
-            el.addEventListener('mouseenter', () => document.body.classList.add('magnetic-hover'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('magnetic-hover'));
-        });
-    }
-    
     function initHeaderAnimation() {
         const titleElement = document.querySelector('.main-title');
         const exploreBtn = document.getElementById('begin-exploration-btn');
@@ -204,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!titleElement) return;
 
         // Set initial states for other elements
-        gsap.set('.subtitle-line', { opacity: 0 });
         gsap.set('.scroll-down-indicator', { opacity: 0 });
 
         try {
@@ -230,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     span.textContent = line;
                     subtitleElement.appendChild(span);
                 });
+                gsap.set(subtitleElement.querySelectorAll('.subtitle-line'), { opacity: 0 });
 
                 const exploreBtn = document.getElementById('begin-exploration-btn');
                 const btnSpan = document.createElement('span');
@@ -790,7 +707,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Apply warp speed effect to background elements
                 const warpFactor = gsap.utils.clamp(0, 1, velocity * 0.008); // Adjusted warp factor
-                gsap.to('.aurora-background, .stars-bg, .twinkle-bg, .cosmic-web-effect, .background-dots, .cosmic-dust', { // Added more elements
+                gsap.to('.aurora-background, .stars-bg, .twinkle-bg, .cosmic-web-effect, .background-dots', { // Added more elements
                     yPercent: -self.progress * 100 * warpFactor, 
                     ease: 'none',
                     duration: 0.05 // Even smaller duration for responsiveness
@@ -809,7 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
                     // Reset background elements to their normal parallax position
-                    gsap.to('.aurora-background, .stars-bg, .twinkle-bg, .cosmic-web-effect, .background-dots, .cosmic-dust', {
+                    gsap.to('.aurora-background, .stars-bg, .twinkle-bg, .cosmic-web-effect, .background-dots', {
                         yPercent: 0, 
                         ease: 'power2.out',
                         duration: 2
@@ -973,12 +890,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.body.appendChild(confetti);
 
                     gsap.to(confetti, {
-                        x: x + (Math.random() - 0.5) * 200,
-                        y: y + (Math.random() - 0.5) * 200,
+                        x: x + (Math.random() - 0.5) * 300, // Increased horizontal spread
+                        y: y - Math.random() * 400, // Explode upwards
                         scale: 0,
                         opacity: 0,
-                        duration: 1 + Math.random() * 0.5,
-                        ease: 'power1.out',
+                        duration: 1.5 + Math.random() * 1, // Longer duration
+                        ease: 'power2.out',
                         onComplete: () => confetti.remove()
                     });
                 }
@@ -1218,12 +1135,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 1.5, 
                 ease: 'power2.out' 
             });
-            gsap.to('.cosmic-dust', { 
-                x: xPos * 25, 
-                y: yPos * 25, 
-                duration: 1.5, 
-                ease: 'power2.out' 
-            });
+            
         });
     }
 
@@ -1244,6 +1156,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 meteor.remove();
             }, 10000);
         }, 2000); // Create a new meteor every 2 seconds
+    }
+
+    function initCursor() {
+        // Skip custom cursor on touch devices
+        if (window.matchMedia("(pointer: coarse)").matches) return;
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        
+        if (!cursorDot || !cursorOutline) return;
+        
+        gsap.set([cursorDot, cursorOutline], { xPercent: -50, yPercent: -50, opacity: 1 });
+        
+        window.addEventListener('mousemove', e => {
+            gsap.to(cursorDot, { duration: 0.2, x: e.clientX, y: e.clientY });
+            gsap.to(cursorOutline, { duration: 0.6, x: e.clientX, y: e.clientY, ease: 'power2.out' });
+        });
+        
+        document.querySelectorAll('a:not(.home-link), button, .showcase-card').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('link-hovered'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('link-hovered'));
+        });
+
+        // Prevent page reload if clicking on the current page's navigation link
+        const currentPage = window.location.pathname.split('/').pop();
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active'); // Ensure active class is set
+                link.addEventListener('click', e => {
+                    e.preventDefault(); // Prevent reload
+                });
+            } else {
+                link.classList.remove('active'); // Ensure other links are not active
+            }
+        });
+
+        // Prevent logo from reloading home page if already on home page
+        const homeLink = document.querySelector('.home-link');
+        if (homeLink && currentPage === 'index.html') {
+            homeLink.addEventListener('click', e => {
+                e.preventDefault();
+            });
+        }
     }
 
     // Refresh ScrollTrigger on window resize
