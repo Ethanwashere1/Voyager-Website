@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     { yPercent: 0, opacity: 1, duration: 1, ease: 'power3.out' }
                 );
                 initHeaderAnimation(); // Call header animation directly after menu animation
+
             }
         });
 
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         // Initially hide all sections below the header
-        gsap.set('main .container > section', { opacity: 0, y: 50 });
+                
     }
 
     function initCursor() {
